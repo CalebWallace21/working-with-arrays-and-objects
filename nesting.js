@@ -50,7 +50,20 @@ var employees = [
     3. Return the updated employee array.
 */
 
-//Code Here
+function employeeUpdater (){
+  for(let i = 0; i < employees.length; i++){         
+      if(employees[i].firstName === "Theo"){
+        delete employees[i]
+      }
+      else if (employees[i].firstName == "Lorie"){
+        employees[i].department = "HR"
+      }
+    }
+    return employees
+  }
+  
+  
+
 
 
 
@@ -67,9 +80,16 @@ var workplaceAccidents = [12, 56, 44, 3, 29, 56, 56, 3, 7, 12];
     2. Use nested for loops to check for duplicate numbers, and then remove the duplicates from the array.
     3. Return the updated array.
 */
-
-//Code Here
-
+function removeDuplicates (){
+for(let i = 0; i < workplaceAccidents.length; i++){  
+  for(let j = workplaceAccidents.length - 1; j > i; j--){    
+    if(workplaceAccidents[i] === workplaceAccidents[j]){
+      workplaceAccidents.splice(j, 1)
+    }
+  }
+}
+return workplaceAccidents
+}
 
 
 ////////// PROBLEM 3 //////////
@@ -97,8 +117,8 @@ var cat = {
 */
 
 //Code Here
-var grumpyActivity;
-var fluffy2ndFriend;
+var grumpyActivity= cat.catFriends[0].activities[1]
+var fluffy2ndFriend= cat.catFriends[1].name
 
 
 
@@ -138,7 +158,13 @@ var myCar = {
     3. Change atFaultForAccident from true to false.
 */
 
-//Code Here
+function recordCleaner(){
+  for (let i = 0; i < myCar.accidents.length; i++){    
+    if (myCar.accidents[i].atFaultForAccident = true){
+      myCar.accidents[i].atFaultForAccident = false;
+    }
+  }
+}
 
 
 
@@ -157,6 +183,14 @@ var numsArr = [ [1, 2, 3, 4], [5, 6], [7, 8, 9, 10, 11]];
     4. Return the modified numsArr.
 */
 
-//Code Here
+  const looper = () => {
+    numsArr.forEach(elem => elem.forEach((b,i) => {
+      if(b % 2 === 0){elem[i] = 'even'}
+      else{elem[i] = 'odd'}
+    }))
+    return numsArr
+  }
+
+
 
 
